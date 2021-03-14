@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingClientIpSample", "GettingClientIpSample\GettingClientIpSample.csproj", "{C9EE5AF8-9549-4AB4-A59A-CEBA8DC5EAD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9EE5AF8-9549-4AB4-A59A-CEBA8DC5EAD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9EE5AF8-9549-4AB4-A59A-CEBA8DC5EAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9EE5AF8-9549-4AB4-A59A-CEBA8DC5EAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9EE5AF8-9549-4AB4-A59A-CEBA8DC5EAD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E49EAD24-0312-49F4-AD8D-8AB75A8F460D}
+	EndGlobalSection
+EndGlobal
