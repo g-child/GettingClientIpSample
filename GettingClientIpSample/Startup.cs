@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Net;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace GettingClientIpSample
 {
@@ -26,6 +21,12 @@ namespace GettingClientIpSample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.ForwardLimit = 2;
+                options.ForwardedHeaders = ForwardedHeaders.XForwardedFor;
+                options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("147.243.0.0"), 16)); // front door ÇÃ ip. ñ{ìñÇÕÇ‡Ç¡Ç∆Ç†ÇÈÇ©Ç‡ÅB
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +36,7 @@ namespace GettingClientIpSample
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseForwardedHeaders();
 
             app.UseHttpsRedirection();
 
